@@ -1,20 +1,17 @@
 #include "nukes.h"
 
-coordinates *
-coordinates_new(double lat, double longitude) {
+coordinates *coordinates_new(double lat, double longitude) {
     coordinates *this = malloc(sizeof(coordinates));
     this->latitude = lat;
     this->longitude = longitude;
     return this;
 }
 
-void
-launchNuke(coordinates *donefor) {
+void launchNuke(coordinates * donefor) {
     printf("Blasted %g %g.\n", donefor->latitude, donefor->longitude);
 }
 
-coordinates *
-getCoordsFromUser() {
+coordinates *getCoordsFromUser() {
     char *latitude = readline("Please enter latitude: ");
     char *longitude = readline("Please enter longitude: ");
     double dlat = strtod(latitude, NULL);
@@ -22,8 +19,5 @@ getCoordsFromUser() {
     free(latitude);
     free(longitude);
     coordinates *c = coordinates_new(dlat, dlong);
-    free(latitude);
-    free(longitude);
-	return c;
+    return c;
 }
-
