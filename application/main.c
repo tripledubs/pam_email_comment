@@ -3,7 +3,7 @@
 
 int launch() {
     coordinates *coords = getCoordsFromUser();
-    launchNuke(coords);
+    getTreasure(coords);
 }
 
 int main(int argc, char *argv[]) {

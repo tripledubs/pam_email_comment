@@ -1,4 +1,4 @@
-#include "nukes.h"
+#include "treasure.h"
 
 coordinates *coordinates_new(double lat, double longitude) {
     coordinates *this = malloc(sizeof(coordinates));
@@ -7,8 +7,8 @@ coordinates *coordinates_new(double lat, double longitude) {
     return this;
 }
 
-void launchNuke(coordinates * donefor) {
-    printf("Blasted %g %g.\n", donefor->latitude, donefor->longitude);
+void getTreasure(coordinates * donefor) {
+    printf("Received Treasure From %g %g.\n", donefor->latitude, donefor->longitude);
 }
 
 coordinates *getCoordsFromUser() {

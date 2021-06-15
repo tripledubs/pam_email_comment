@@ -1,5 +1,5 @@
-#ifndef NUKES_H
-#define NUKES_H
+#ifndef TREASURE_H
+#define TREASURE_H
 
 #include <stdio.h>
 #include <readline/readline.h>
