@@ -1,0 +1,4 @@
+#/etc/pam.d/treasure
+
+auth required pam_unix.so debug
+account	required verify_email.so debug

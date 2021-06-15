@@ -7,7 +7,7 @@ int launch() {
 }
 
 int main(int argc, char *argv[]) {
-    if ((authenticate("dubs", "nukes") == PAM_SUCCESS)) {
+    if ((authenticate("dubs", "treasure") == PAM_SUCCESS)) {
         launch();
     }
 }
