@@ -13,6 +13,6 @@
 #include <unistd.h>
 
 #include "authenticate.h"
-#include "nukes.h"
+#include "treasure.h"
 #include <readline/readline.h>
 #endif

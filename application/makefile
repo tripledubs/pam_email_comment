@@ -1,5 +1,5 @@
 P=main
-OBJECTS= authenticate.o nukes.o
+OBJECTS= authenticate.o treasure.o
 DOCDIRS = latex man html
 CFLAGS = -Wall -Wpedantic -std=c11 -D_GNU_SOURCE
 ifdef SPEEDY
