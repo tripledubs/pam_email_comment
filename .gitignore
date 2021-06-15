@@ -42,3 +42,6 @@ main
 *.su
 *.idb
 *.pdb
+
+# Indent files
+*~
