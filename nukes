@@ -1,4 +1,0 @@
-#/etc/pam.d/nukes
-
-auth required pam_unix.so debug
-account	required verify_email.so debug
