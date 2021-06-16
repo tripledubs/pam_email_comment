@@ -8,7 +8,7 @@ new_domain_list(char *domain) {
     domain_list *list = malloc(sizeof(domain_list));
     list->head = new;
     list->size = 1;
-    return 0;
+    return list;
 }
 
 int add_domain(domain_list *list, char *domain) {

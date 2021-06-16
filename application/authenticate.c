@@ -4,10 +4,8 @@
 #include <security/pam_appl.h>
 #include <security/openpam.h>
 
-
-
 int test_conv(int num_msg, const struct pam_message **msg,
-              struct pam_response **resp, void *appdata_ptr) {
+    struct pam_response **resp, void *appdata_ptr) {
     const struct pam_message *msg_ptr = *msg;
     struct pam_response *resp_ptr = NULL;
     int x = 0;
@@ -32,10 +30,9 @@ int test_conv(int num_msg, const struct pam_message **msg,
     return PAM_SUCCESS;
 }
 
-
 int authenticate(char *user, char *service) {
     struct pam_conv conv;
-    conv.conv = test_conv;
+    conv.conv = openpam_ttyconv;
     struct pam_handle_t *pamh;
     int retval = pam_start(service, user, &conv, &pamh);
     if (retval != PAM_SUCCESS) {

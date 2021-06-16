@@ -2,26 +2,8 @@
 
 domain_list *approved_domains;
 
-bool confirm(char *answer) {
-    printf("Does this look correct? '%s'\n", answer);
-    char confirm = getchar();
-    if (confirm == 'Y' || confirm == 'y') {
-        return true;
-    }
-    return false;
-}
-
 int hasAtChar(char *string) {
-    char *looker = strdup(string);
-    bool found = false;
-    while (*looker && !found) {
-        if (*looker == '@') {
-            found = true;
-        }
-        looker++;
-    }
-    free(looker);
-    return found;
+    return ( strchr(string, '@') != NULL);
 }
 
 void haveDomain(char *input) {
@@ -35,21 +17,18 @@ void haveDomain(char *input) {
         printf("Approved DOmain: %s\n", n->domain);
         n = n->next;
     }
-        
 }
 
 void parseOptions(const char *argv) {
-    char *domain;
     char *token, *string, *tofree;
     tofree = string = strdup(argv);
     if (string == NULL)
         err(1, "strdup");
     while ( (token = strsep(&string, "=")) != NULL) {
         if (strcmp(token, "domain") == 0) {
-            domain = string;
+            haveDomain(string);
         }
     }
-    printf("Domain is %s\n", domain);
     free(tofree);
 }
 
