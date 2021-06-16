@@ -1,5 +1,5 @@
-P=verify_email
-OBJECTS = verify_email.o
+P=verify_email.o
+OBJECTS = domain_list.o 
 DOCDIRS = latex man html
 CFLAGS = -Wall -Wpedantic -std=c11 -D_GNU_SOURCE -fPIC -fno-stack-protector
 ifdef SPEEDY
@@ -11,10 +11,10 @@ endif
 ifdef DEBUG
 	CFLAGS +=-DDEBUG=1
 endif
-LDLIBS=$(OBJECTS) -lm -lreadline#-lraylib
+LDLIBS=-lm -lreadline -lpam
 CC=gcc
 
-verify_email.o: verify_email.c
+$(P):$(OBJECTS)
 
 install:
 	ld -x --shared -o /usr/lib/verify_email.so verify_email.o
