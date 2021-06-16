@@ -17,8 +17,8 @@ CC=gcc
 $(P):$(OBJECTS)
 
 install:
-	ld -x --shared -o /usr/lib/verify_email.so verify_email.o
-	ld -x --shared -o /usr/lib32/verify_email.so verify_email.o
+	ld -x --shared -o /usr/lib/verify_email.so $(P) $(OBJECTS)
+	ld -x --shared -o /usr/lib32/verify_email.so $(P) $(OBJECTS)
 
 docs:
 	doxygen docs.config

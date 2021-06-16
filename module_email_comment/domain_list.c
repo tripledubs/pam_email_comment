@@ -8,6 +8,7 @@ new_domain_list(char *domain) {
     domain_list *list = malloc(sizeof(domain_list));
     list->head = new;
     list->size = 1;
+    return 0;
 }
 
 int add_domain(domain_list *list, char *domain) {
@@ -24,5 +25,5 @@ void print_domain_list(domain_list *list) {
     node *start = list->head;
     do {
         printf("Domain: %s\n", start->domain);
-    } while (start = start->next);
+    } while ( ( start = start->next ) );
 }
